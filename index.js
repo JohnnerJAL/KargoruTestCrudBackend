@@ -9,6 +9,10 @@ require('dotenv').config({
 const db = require('./db');
 db(process.env.MONGODB_URI);
 
+// Cors
+const cors = require("cors");
+app.use(cors());
+
 // Read json -------------------------------- =>
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({ limit: '50mb' }));
